@@ -2,6 +2,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
+import java.util.Comparator;
 
 abstract class Record implements Comparable<Record> {
     protected String title;
@@ -16,9 +17,7 @@ abstract class Record implements Comparable<Record> {
 
     @Override
     public int compareTo(Record other) {
-        // Реалізуйте порівняння записів на основі вашого критерію
-        // Поверніть відповідне значення для сортування
-        // Наприклад, порівняння за назвою або автором
+        return this.title.compareTo(other.title);
     }
 }
 
@@ -156,9 +155,7 @@ public class Main {
     static class RecordComparator implements Comparator<Record> {
         @Override
         public int compare(Record r1, Record r2) {
-            // Реалізуйте порівняння записів на основі вашого критерію
-            // Поверніть відповідне значення для сортування
-            // Наприклад, порівняння за назвою або автором
+            return r1.title.compareTo(r2.title);
         }
     }
 }
